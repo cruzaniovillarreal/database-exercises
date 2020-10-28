@@ -1,7 +1,6 @@
 USE employees;
 
-SELECT *
-FROM employees
+SELECT * FROM employees
 WHERE first_name IN ('Irena', 'Vidya', 'Maya') AND gender != 'F'
 ORDER BY last_name DESC, first_name DESC;
 
