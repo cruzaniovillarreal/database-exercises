@@ -1,0 +1,35 @@
+DROP DATABASE IF EXISTS adlister;
+CREATE DATABASE IF NOT EXISTS adlister;
+USE adlister;
+
+CREATE TABLE users(
+id INT UNSIGNED NOT NULL AUTO_INCREMENT,
+user_email VARCHAR(45) NOT NULL,
+user_password VARCHAR(45) NOT NULL,
+PRIMARY KEY(id)
+);
+
+CREATE TABLE ads(
+id INT UNSIGNED NOT NULL AUTO_INCREMENT,
+title VARCHAR(100) NOT NULL,
+description VARCHAR(255) NOT NULL,
+users_id INT UNSIGNED NOT NULL,
+PRIMARY KEY(id),
+FOREIGN KEY(users_id) REFERENCES users(id)
+);
+
+CREATE TABLE category(
+id INT UNSIGNED NOT NULL AUTO_INCREMENT,
+type VARCHAR(100) NOT NULL,
+PRIMARY KEY(id)
+);
+
+CREATE TABLE ads_category(
+ads_category_ads_id INT UNSIGNED NOT NULL,
+ads_category_category_id INT UNSIGNED NOT NULL,
+FOREIGN KEY(ads_category_ads_id) REFERENCES ads(id),
+FOREIGN KEY(ads_category_category_id) REFERENCES category(id)
+);
+
+
+
