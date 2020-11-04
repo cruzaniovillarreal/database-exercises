@@ -32,4 +32,28 @@ FOREIGN KEY(ads_category_category_id) REFERENCES category(id)
 );
 
 
+# use adlister;
+#
+# Select user_email
+# from users as u
+#          join ads a on u.id = a.users_id
+# where a.id = #GivenAdId;
+#
+# Select c.type
+# from ads_category as ac
+#          join category c on ac.ads_category_category_id = c.id
+# where ads_category_ads_id = #GivenAdId;
+#
+# Select *
+# from ads as a
+#          join ads_category ac on a.id = ac.ads_category_ads_id
+#          join category c on ac.ads_category_category_id = c.id
+# where c.id = #GivenCategory;
+#
+# Select *
+# from ads as a
+# where users_id = #GivenUserID;
+
+
+
 
